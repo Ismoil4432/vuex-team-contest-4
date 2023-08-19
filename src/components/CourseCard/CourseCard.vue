@@ -26,7 +26,7 @@ defineProps(["data"]);
 				class="lg:hidden block w-[180px] h-[180px] mx-auto" />
 			<div class="lg:w-[55%] w-full">
 				<div class="flex items-start justify-between">
-					<h2 class="lg:text-[28px] text-[24px] font-[700]">
+					<h2 class="lg:text-[28px] text-[24px] font-[700] mb-6">
 						.NET mutaxassislik kursi
 					</h2>
 					<span
