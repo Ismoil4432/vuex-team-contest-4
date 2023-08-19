@@ -1,13 +1,13 @@
 <template>
   <section class="advantage bg-white min-h-[500px] py-[48px]">
-    <Container class="px-[32px]">
+    <Container>
       <h2
-        class="font-extrabold text-[32px] leading-[40px] text-[#0F1826] mb-[48px]"
+        class="font-bold md:font-extrabold text-2xl md:text-[32px] md:leading-[40px] text-[#0F1826] mb-[48px]"
       >
         Bizning afzalliklarimiz
       </h2>
 
-      <div class="grid grid-cols-2 gap-[40px] mb-[16px]">
+      <div class="grid md:grid-cols-2 gap-[40px] mb-[16px]">
         <div
           v-for="el in advantages.slice(0, toggle ? advantages.length : 4)"
           :key="el.id"

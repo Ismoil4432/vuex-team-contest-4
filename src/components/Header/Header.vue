@@ -1,7 +1,7 @@
 <template>
   <header class="fixed z-10 top-0 w-full bg-[#F1F0EE]">
     <Container>
-      <nav class="flex items-center justify-between md:px-[32px] py-[17px]">
+      <nav class="flex items-center justify-between py-[17px]">
         <a href="/"><img src="/images/logo.svg" alt="" /></a>
 
         <button @click="openModal" class="block md:hidden px-2">

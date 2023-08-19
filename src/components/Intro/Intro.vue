@@ -1,6 +1,6 @@
 <template>
   <section class="intro bg-[#F1F0EE]">
-    <Container class="md:px-[32px] pt-[80px] md:pt-[116px]">
+    <Container class="pt-[80px] md:pt-[116px]">
       <div class="max-w-[325px] mb-[70px]">
         <div class="mb-[20px]">
           <p
@@ -11,8 +11,7 @@
           <p
             class="font-bold text-[32px] leading-[48px] md:text-[40px] md:leading-[56px] text-black"
           >
-            <span class="text-[#BA8D5B]">“Najot Ta’lim”</span
-            ><span class="">da</span>
+            <span class="text-[#BA8D5B]">“Najot Ta’lim”</span><span>da</span>
             <!-- <span class="text-[#BA8D5B]">mutaxassislardan</span> -->
             <!-- <span class="text-[#BA8D5B]">onlayn</span> -->
             <!-- <span class="text-[#BA8D5B]">istalgan nuqtadan</span> -->

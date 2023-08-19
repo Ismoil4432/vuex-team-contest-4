@@ -1,6 +1,6 @@
 <template>
   <section class="feedback bg-white pt-[40px] pb-[60px]">
-    <Container class="px-[32px]">
+    <Container>
       <h2
         class="font-extrabold text-[32px] leading-[40px] text-[#0F1826] mb-[24px]"
       >

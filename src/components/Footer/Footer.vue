@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-[#F9F8F7] pt-[26px] pb-[36px]">
-    <Container class="px-[32px]">
+    <Container>
       <div class="flex gap-[33px]">
         <div class="flex flex-col w-[255px]">
           <div>
@@ -16,7 +16,9 @@
           </div>
 
           <div>
-            <h4 class="font-bold text-[14px] leading-[22px] text-[#607987] mt-[58px]">
+            <h4
+              class="font-bold text-[14px] leading-[22px] text-[#607987] mt-[58px]"
+            >
               © Najot Ta'lim, 2023
             </h4>
             <p class="font-semibold text-[14px] leading-[22px] text-[#607987]">
@@ -158,19 +160,13 @@
               </h3>
               <ul class="flex gap-[12px]">
                 <li>
-                  <a href="#"
-                    ><img src="/images/link-telegram.svg" alt=""
-                  /></a>
+                  <a href="#"><img src="/images/link-telegram.svg" alt="" /></a>
                 </li>
                 <li>
-                  <a href="#"
-                    ><img src="/images/link-facebook.svg" alt=""
-                  /></a>
+                  <a href="#"><img src="/images/link-facebook.svg" alt="" /></a>
                 </li>
                 <li>
-                  <a href="#"
-                    ><img src="/images/link-you-tube.svg" alt=""
-                  /></a>
+                  <a href="#"><img src="/images/link-you-tube.svg" alt="" /></a>
                 </li>
                 <li>
                   <a href="#"
@@ -178,9 +174,7 @@
                   /></a>
                 </li>
                 <li>
-                  <a href="#"
-                    ><img src="/images/link-linkedin.svg" alt=""
-                  /></a>
+                  <a href="#"><img src="/images/link-linkedin.svg" alt="" /></a>
                 </li>
               </ul>
             </div>

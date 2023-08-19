@@ -1,6 +1,6 @@
 <template>
-  <div class="flex gap-[40px]">
-    <div class="">
+  <div class="flex gap-[20px] md:gap-[40px]">
+    <div class="flex-shrink-0">
       <img :src="`/images/${icon}`" alt="" />
     </div>
 

@@ -1,13 +1,9 @@
 <template>
   <section class="contack bg-white pt-[20px] pb-[100px]">
-    <Container class="px-[32px]">
+    <Container>
       <div class="flex bg-[#F9F8F7] rounded-[20px]">
         <div class="rounded-[20px] w-[512px]">
-          <img
-            class="rounded-l-[20px]"
-            src="/images/bg-contact.png"
-            alt=""
-          />
+          <img class="rounded-l-[20px]" src="/images/bg-contact.png" alt="" />
         </div>
 
         <div class="p-[32px] w-[512px]">

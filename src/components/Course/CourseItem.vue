@@ -1,7 +1,7 @@
 <template>
   <a
     :href="`/courses/${id}`"
-    class="block w-[255px] h-[95px] p-[16px] border border-[#607987] rounded hover:bg-white hover:border-white duration-150 custom-shadow"
+    class="block min-w-[255px] h-[95px] p-[16px] border border-[#607987] rounded hover:bg-white hover:border-white duration-150 custom-shadow"
   >
     <h3 class="font-bold text-[20px] leading-[27px] text-[#0F1826]">
       {{ formatTitle(title) }}
