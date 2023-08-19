@@ -14,24 +14,27 @@
               <a
                 class="font-bold text-[16px] leading-[22px] hover:underline"
                 href="/courses"
-                >Kurslar</a
               >
+                Kurslar
+              </a>
             </li>
 
             <li>
               <a
                 class="font-bold text-[16px] leading-[22px] hover:underline"
                 href="/blog"
-                >Blog</a
               >
+                Blog
+              </a>
             </li>
 
             <li>
               <a
                 class="font-bold text-[16px] leading-[22px] hover:underline"
-                href="/login"
-                >Kirish</a
+                href="/auth/login"
               >
+                Kirish
+              </a>
             </li>
           </ul>
         </Modal>
@@ -41,24 +44,27 @@
             <a
               class="font-medium text-[16px] leading-[22px] hover:underline"
               href="/courses"
-              >Kurslar</a
             >
+              Kurslar
+            </a>
           </li>
 
           <li>
             <a
               class="font-medium text-[16px] leading-[22px] hover:underline"
               href="/blog"
-              >Blog</a
             >
+              Blog
+            </a>
           </li>
 
           <li>
             <a
               class="font-medium text-[16px] leading-[22px] hover:border hover:border-[#ba8d5b] ease-in-out duration-300 px-[12px] py-[9px] w-[140px] block text-center bg-white rounded-full"
-              href="/login"
-              >Kirish</a
+              href="/auth/login"
             >
+              Kirish
+            </a>
           </li>
 
           <!-- <li>
