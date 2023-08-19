@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-[160px] h-[100px] px-[12px] py-[16px] bg-[#F9F8F7] rounded-lg filter grayscale hover:grayscale-0 hover:bg-white duration-150 custom-shadow"
+    class="aspect-video px-[12px] py-[16px] flex items-center justify-center bg-[#F9F8F7] rounded-lg filter grayscale hover:grayscale-0 hover:bg-white duration-150 custom-shadow"
   >
     <img :src="`/images/${icon}`" alt="" />
   </div>
