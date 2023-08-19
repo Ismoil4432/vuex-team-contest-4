@@ -1,7 +1,15 @@
 <template>
   <div class="modal" v-if="visible">
     <div class="modal-content">
-      <span class="close" @click="closeModal">&times;</span>
+      <div class="flex justify-between border-b pb-3">
+        <a href="/"
+          ><img src="/images/logo.svg" alt="logo" class="h-[35px]"
+        /></a>
+
+        <button class="close px-2" @click="closeModal">
+          <i class="bx bx-x text-3xl"></i>
+        </button>
+      </div>
       <slot></slot>
     </div>
   </div>
@@ -14,8 +22,6 @@ const emits = defineEmits(["close"]);
 const closeModal = () => {
   emits("close");
 };
-
-
 </script>
 
 <style scoped>
@@ -33,9 +39,8 @@ const closeModal = () => {
 
 .modal-content {
   position: absolute;
-  height: 500px;
   right: 0;
-  width: 400px;
+  width: 320px;
   background-color: white;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
