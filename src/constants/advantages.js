@@ -23,4 +23,40 @@ export const advantages = [
     title: "Interaktiv darslar",
     text: "Darslarni o'zlashtirish davrida sizda savollar tug'ilishi tabiiy holat. Mentorlarga murojaat qilishingiz, o'zingizni qiziqtirgan savollarizga javob olishingiz va tavsiyalar olishingiz mumkin",
   },
+  {
+    id: 5,
+    icon: "advantage-icon-5.svg",
+    title: "Nazariya va amaliyot",
+    text: "Siz har bir kursda berilgan topshiriqlarni amalga oshirish orqali bilimlaringizni yanada mustahkamlab borasiz",
+  },
+  {
+    id: 6,
+    icon: "advantage-icon-6.svg",
+    title: "Mentor kerakmi?",
+    text: "Darslarni o'zlashtirish davrida sizda savollar tug'ilishi tabiiy holat. Mentorlarga murojaat qilsangiz, ular sizni qiynayotgan masalalar bo'yicha yechim topishga yo'l ko'rsatadilar.",
+  },
+  {
+    id: 7,
+    icon: "advantage-icon-7.svg",
+    title: "Hamjamiyat",
+    text: "Kursni boshlashingiz bilan “Najot Ta'lim” yopiq hamjamiyatiga a'zo bo'lasiz. Bu yerda siz o'rganishga va tajriba almashishga tayyor odamlarni uchratasiz va tanishasiz",
+  },
+  {
+    id: 8,
+    icon: "advantage-icon-8.svg",
+    title: "Hammamiz insonmiz",
+    text: "O'qish jarayonida avvalgi o'tilgan mavzular yoddan ko'tarilishi, ba'zi mavzularni mustahkamlashga ehtiyoj tug'ilishi mumkin. Shu bois sizda avvalgi darslarni takroran ko'rish imkoniyati bor.",
+  },
+  {
+    id: 9,
+    icon: "advantage-icon-9.svg",
+    title: "Sertifikat",
+    text: "Kursni muvaffaqiyatli yakunlaganingizdan so'ng sizga elektron sertifikat taqdim etiladi. Sertifikat sizni bilimingizni oson ko'rsatib beruvchi isbot",
+  },
+  {
+    id: 10,
+    icon: "advantage-icon-10.svg",
+    title: "Tezkor to'lov",
+    text: "Xaridni eng ommabop to'lov tizimlari orqali bir zumda amalga oshiring va kursni qo'lga kiriting. Hammasi onlayn, hammasi zamonaviy, hammasi oson..",
+  },
 ];

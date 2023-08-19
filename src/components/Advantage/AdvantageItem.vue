@@ -1,5 +1,5 @@
 <template>
-  <di class="flex gap-[40px]">
+  <div class="flex gap-[40px]">
     <div class="">
       <img :src="`/images/${icon}`" alt="" />
     </div>
@@ -12,7 +12,7 @@
         {{ text }}
       </p>
     </div>
-  </di>
+  </div>
 </template>
 <script setup>
 const props = defineProps(["id", "icon", "title", "text"]);
