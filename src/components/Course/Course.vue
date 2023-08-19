@@ -15,7 +15,7 @@
       <div
         class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[32px] mb-[16px]"
       >
-        <div v-for="el in courses" :key="el.id">
+        <div v-for="el in courses.slice(0, 4)" :key="el.id">
           <CourseItem :id="el.id" :title="el.title" :text="el.text" />
         </div>
       </div>
@@ -29,6 +29,14 @@
   </section>
 </template>
 <script setup>
-import { courses } from "../../constants/courses";
+// import { courses } from "../../constants/courses";
+import { ref, computed } from "vue";
+import { useCourses } from "@/stores/courses";
+
+const courses_store = useCourses();
+
+const courses = computed(() => {
+  return courses_store.COURSES;
+});
 </script>
 <style lang="scss"></style>

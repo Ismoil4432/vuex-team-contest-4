@@ -141,7 +141,7 @@
       </div>
 
       <div class="block lg:hidden">
-        <div class="flex justify-between items-center gap-5 pb-8">
+        <div class="flex justify-between items-center gap-5 py-8">
           <SocialMedia />
 
           <Phone />
