@@ -36,11 +36,31 @@
 <script setup></script>
 <style lang="scss">
 .intro {
-  background-image: url("/images/bg-hero.png"),
-    url("/images/bg-hero.svg");
+  background-image: url("/images/bg-hero.png"), url("/images/bg-hero.svg");
   background-repeat: no-repeat;
   background-position: bottom 0 right 27%, calc(50% + 270px) calc(50% + 47px);
   background-size: 650px 450px, contain;
   padding-bottom: 60px;
+}
+
+@media (max-width: 1150px) {
+  .intro {
+    background-position: bottom 0 right 12%, calc(50% + 270px) calc(50% + 47px);
+    background-size: 500px 340px, 760px 450px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .intro {
+    background-position: bottom 0 right 12%, calc(50% + 270px) calc(50% + 47px);
+    background-size: 400px 270px, 660px 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro {
+    background-position: bottom 0 right 12%, calc(50% + 220px) calc(50% + 110px);
+    background-size: 300px 200px, 560px;
+  }
 }
 </style>
