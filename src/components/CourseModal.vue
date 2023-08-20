@@ -131,7 +131,7 @@
             v-if="isEdit"
             @click="deleteItem"
             class="flex w-full items-center justify-center font-bold text-sm sm:text-[16px] sm:leading-[22px] text-white bg-[#be3939] border border-[#be3939] hover:text-black hover:bg-white ease-in-out duration-300 px-4 py-3 rounded-full"
-            type="submit"
+            type="button"
           >
             <span>O'chirish</span>
           </button>
