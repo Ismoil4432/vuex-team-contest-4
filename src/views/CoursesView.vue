@@ -3,13 +3,26 @@
   <main class="mt-[80px]">
     <section class="intro bg-[#fff]">
       <Container class="px-[32px] py-8">
-        <div class="flex items-center gap-2">
-          <router-link to="/" class="text-[#c4c4c4]">Bosh sahifa</router-link>
-          <i class="text-[#c4c4c4] bx bx-right-arrow-alt"></i>
-          <router-link to="/courses" class="text-[#ba8d5b]">
-            Kurslar
-          </router-link>
+        <div
+          class="custom-flex flex flex-col justify-between items-start gap-5"
+        >
+          <div class="flex items-center gap-2">
+            <router-link to="/" class="text-[#c4c4c4]">Bosh sahifa</router-link>
+            <i class="text-[#c4c4c4] bx bx-right-arrow-alt"></i>
+            <router-link to="/courses" class="text-[#ba8d5b]">
+              Kurslar
+            </router-link>
+          </div>
+
+          <button
+            @click="openModal"
+            class="flex items-center justify-center font-bold text-sm sm:text-[16px] sm:leading-[22px] text-white bg-[#BA8D5B] border border-[#ba8d5b] hover:text-black hover:bg-white ease-in-out duration-300 px-[45px] py-[12px] rounded-full"
+            type="submit"
+          >
+            <span>Kurs qo'shish</span>
+          </button>
         </div>
+
         <div class="sm:flex items-center justify-between">
           <h2 class="heading-[56px] my-8 text-[32px] text-[#0f1826] font-[800]">
             Barcha o‘quv kurslari
@@ -60,12 +73,36 @@
     </section>
   </main>
   <Footer />
+
+  <!-- modal -->
+  <CourseModal :visible="modalVisible" @close="closeModal"> </CourseModal>
+  <!-- modal -->
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useCategory } from "@/stores/category";
 import { useCourses } from "@/stores/courses";
+
+const modalVisible = ref(false);
+
+const openModal = () => {
+  modalVisible.value = true;
+  toggleBodyScroll(false);
+};
+
+const closeModal = () => {
+  modalVisible.value = false;
+  toggleBodyScroll(true);
+};
+
+const toggleBodyScroll = (locked) => {
+  if (locked) {
+    document.body.classList.remove("no-scroll");
+  } else {
+    document.body.classList.add("no-scroll");
+  }
+};
 
 const category_store = useCategory();
 const courses_store = useCourses();
@@ -96,6 +133,18 @@ const courses = computed(() => {
 const search = (event) => {
   searching.value = event.target.value;
 };
+
+onMounted(() => {
+  courses_store.updateData();
+  
+});
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@media (min-width: 440px) {
+  .custom-flex {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+</style>
