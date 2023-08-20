@@ -1,14 +1,36 @@
 # vuex-team-contest-4
 
-This template should help get you started developing with Vue 3 in Vite.
+# Admin uchun register:
 
-## Recommended IDE Setup
+```sh
+Ism: xohlagan ism
+Tel: xohlagan nomer
+Parol: admin
+Parolni tasdiqlash: admin
+```
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+# Admin uchun login:
 
-## Customize configuration
+```sh
+Tel: xohlagan nomer
+Parol: admin
+```
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+# User uchun register:
+
+```sh
+Ism: xohlagan ism
+Tel: xohlagan nomer
+Parol: xohlagan parol
+Parolni tasdiqlash: xohlagan parol
+```
+
+# User uchun login:
+
+```sh
+Tel: xohlagan nomer
+Parol: xohlagan parol
+```
 
 ## Project Setup
 
