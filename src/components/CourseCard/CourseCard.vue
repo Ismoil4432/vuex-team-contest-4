@@ -1,11 +1,15 @@
-<script setup>
-defineProps(["data"]);
-</script>
-
 <template>
   <div
-    class="bg-[#f7f7f5] p-5 hover:shadow-lg rounded duration-200 cursor-pointer"
+    class="bg-[#f7f7f5] p-5 hover:shadow-lg rounded duration-200 cursor-pointer relative"
   >
+    <button
+      v-if="isAdmin"
+      @click="openModal"
+      class="absolute top-3 right-3 px-1 opacity-50 hover:opacity-100 hover:bg-gray-100 rounded"
+    >
+      <i class="bx bx-dots-vertical-rounded text-3xl"></i>
+    </button>
+
     <div class="lg:flex hidden items-center gap-7">
       <span
         :class="`text-sm ${
@@ -72,6 +76,48 @@ defineProps(["data"]);
       </div>
     </div>
   </div>
+
+  <!-- modal -->
+  <CourseModal
+    :visible="modalVisible"
+    @close="closeModal"
+    :isEdit="true"
+    :data="data"
+  >
+  </CourseModal>
+  <!-- modal -->
 </template>
+
+<script setup>
+import { ref, computed } from "vue";
+import { useCategory } from "@/stores/category";
+import { useCourses } from "@/stores/courses";
+
+defineProps(["data"]);
+
+const isAdmin = computed(() => localStorage.getItem("role") == "admin");
+const modalVisible = ref(false);
+
+const openModal = () => {
+  modalVisible.value = true;
+  toggleBodyScroll(false);
+};
+
+const closeModal = () => {
+  modalVisible.value = false;
+  toggleBodyScroll(true);
+};
+
+const toggleBodyScroll = (locked) => {
+  if (locked) {
+    document.body.classList.remove("no-scroll");
+  } else {
+    document.body.classList.add("no-scroll");
+  }
+};
+
+const courses_store = useCourses();
+const category_store = useCategory();
+</script>
 
 <style scoped></style>

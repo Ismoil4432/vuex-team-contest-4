@@ -15,6 +15,7 @@
           </div>
 
           <button
+            v-if="isAdmin"
             @click="openModal"
             class="flex items-center justify-center font-bold text-sm sm:text-[16px] sm:leading-[22px] text-white bg-[#BA8D5B] border border-[#ba8d5b] hover:text-black hover:bg-white ease-in-out duration-300 px-[45px] py-[12px] rounded-full"
             type="submit"
@@ -84,6 +85,7 @@ import { ref, computed, onMounted } from "vue";
 import { useCategory } from "@/stores/category";
 import { useCourses } from "@/stores/courses";
 
+const isAdmin = computed(() => localStorage.getItem("role") == "admin");
 const modalVisible = ref(false);
 
 const openModal = () => {
@@ -136,7 +138,6 @@ const search = (event) => {
 
 onMounted(() => {
   courses_store.updateData();
-  
 });
 </script>
 

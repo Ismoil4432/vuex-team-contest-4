@@ -9,7 +9,30 @@ export const useCourses = defineStore("courses", () => {
   const COURSES = computed(() => course.data);
 
   const CREATE = (item) => {
-    course.data.push(item);
+    course.data.push({ id: generateUniqueId(), ...item });
+    updateLocalStorage();
+  };
+
+  const UPDATE = (id, updateItem) => {
+    course.data.forEach((item) => {
+      if (item.id == id) {
+        item.title = updateItem.title;
+        item.text = updateItem.text;
+        item.durationInMinutes = updateItem.durationInMinutes;
+        item.lessons = updateItem.lessons;
+        item.img = updateItem.img;
+        item.category = updateItem.category;
+      }
+    });
+    updateLocalStorage();
+  };
+
+  const DELETE = (id) => {
+    course.data.forEach((item, index) => {
+      if (item.id == id) {
+        data.value.splice(index, 1);
+      }
+    });
     updateLocalStorage();
   };
 
@@ -78,5 +101,18 @@ export const useCourses = defineStore("courses", () => {
     }
   };
 
-  return { COURSES, CREATE, updateLocalStorage, updateData };
+  const generateUniqueId = () => {
+    const allUniqueId = course.data.map((item) => item.id);
+    let id = 1;
+    while (true) {
+      if (!allUniqueId.includes(id)) {
+        break;
+      }
+
+      id++;
+    }
+    return id;
+  };
+
+  return { COURSES, CREATE, UPDATE, DELETE, updateLocalStorage, updateData };
 });

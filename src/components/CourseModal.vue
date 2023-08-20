@@ -131,7 +131,7 @@
             class="flex w-full items-center justify-center font-bold text-sm sm:text-[16px] sm:leading-[22px] text-white bg-[#BA8D5B] border border-[#ba8d5b] hover:text-black hover:bg-white ease-in-out duration-300 px-4 py-3 rounded-full"
             type="submit"
           >
-            <span>Qo'shish</span>
+            <span>{{ isEdit ? "Yangilash" : "Qo'shish" }}</span>
           </button>
         </div>
       </form>
@@ -158,10 +158,10 @@
 </template>
 
 <script setup>
-import { ref, reactive } from "vue";
+import { ref, reactive, onMounted } from "vue";
 import { useCourses } from "@/stores/courses";
 
-defineProps(["visible"]);
+const { data, isEdit } = defineProps(["visible", "data", "isEdit"]);
 const emits = defineEmits(["close"]);
 
 const closeModal = () => {
@@ -207,28 +207,54 @@ const closeCategoryModal = () => {
 const submitForm = (event) => {
   event.preventDefault();
 
-  courses_store.CREATE({
-    title: title.value.trim(),
-    text: text.value.trim(),
-    durationInMinutes: durationInMinutes.value,
-    lessons: lessons.value,
-    img: selectedImage.value || "smd.svg",
-    category: selectedCategory.value || {
-      id: 1,
-      name: "Dizayn",
-      bg: "bg-[rgb(174,141,94)]",
-    },
-  });
+  if (isEdit) {
+    courses_store.UPDATE(data.id, {
+      title: title.value.trim(),
+      text: text.value.trim(),
+      durationInMinutes: durationInMinutes.value,
+      lessons: lessons.value,
+      img: selectedImage.value || "smd.svg",
+      category: selectedCategory.value || {
+        id: 1,
+        name: "Dizayn",
+        bg: "bg-[rgb(174,141,94)]",
+      },
+    });
+  } else {
+    courses_store.CREATE({
+      title: title.value.trim(),
+      text: text.value.trim(),
+      durationInMinutes: durationInMinutes.value,
+      lessons: lessons.value,
+      img: selectedImage.value || "smd.svg",
+      category: selectedCategory.value || {
+        id: 1,
+        name: "Dizayn",
+        bg: "bg-[rgb(174,141,94)]",
+      },
+    });
 
-  title.value = "";
-  text.value = "";
-  durationInMinutes.value = null;
-  lessons.value = null;
-  selectedImage.value = null;
-  selectedCategory.value = null;
+    title.value = "";
+    text.value = "";
+    durationInMinutes.value = null;
+    lessons.value = null;
+    selectedImage.value = null;
+    selectedCategory.value = null;
+  }
 
   closeModal();
 };
+
+onMounted(() => {
+  if (isEdit) {
+    title.value = data.title;
+    text.value = data.text;
+    durationInMinutes.value = data.durationInMinutes;
+    lessons.value = data.lessons;
+    selectedImage.value = data.img;
+    selectedCategory.value = data.category;
+  }
+});
 </script>
 
 <style scoped>
