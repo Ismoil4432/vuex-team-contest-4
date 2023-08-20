@@ -83,7 +83,7 @@
             required
           />
 
-          <div class="flex justify-between">
+          <div class="flex flex-col sm:flex-row justify-between">
             <button
               class="relative flex mb-10"
               type="button"
@@ -107,7 +107,7 @@
             </button>
 
             <button
-              :class="`flex mb-10 text-[14px] leading-[17px] px-[16px] py-[12px] mr-[16px] rounded-full border border-[#DADADA] outline-none focus:border-blue-400 ${
+              :class="`flex mb-10 w-full sm:w-auto text-[14px] leading-[17px] px-[16px] py-[12px] mr-[16px] rounded-full border border-[#DADADA] outline-none focus:border-blue-400 ${
                 selectedCategory
                   ? selectedCategory.bg + ' text-white'
                   : ' text-black'
@@ -269,7 +269,9 @@ onMounted(() => {
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
-  align-items: center;
+  align-items: start;
+  overflow-y: scroll;
+  padding: 20px;
 }
 
 .modal-content {
@@ -277,7 +279,30 @@ onMounted(() => {
   width: 520px;
   background-color: white;
   border-radius: 15px;
+  margin: 20px 0;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 620px) {
+  .modal-content {
+    width: 500px;
+  }
+}
+
+@media (max-width: 520px) {
+  .modal-content {
+    width: 400px;
+  }
+}
+
+@media (max-width: 420px) {
+  .modal-content {
+    width: 300px;
+  }
 }
 </style>
