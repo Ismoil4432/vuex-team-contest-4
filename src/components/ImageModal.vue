@@ -38,7 +38,7 @@ const closeModal = () => {
 
 const selectImage = (imageName) => {
   emits("select-image", imageName);
-  emits("close");
+  closeModal();
 };
 
 const courseImages = reactive([

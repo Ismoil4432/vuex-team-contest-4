@@ -43,7 +43,7 @@ const closeModal = () => {
 
 const selectCategory = (category) => {
   emits("select-category", category);
-  emits("close");
+  closeModal();
 };
 
 const categories = category_store.CATEGORY;

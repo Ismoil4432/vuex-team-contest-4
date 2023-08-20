@@ -125,8 +125,17 @@
         </div>
 
         <div
-          class="flex flex-col sm:flex-row justify-between items-center gap-3"
+          class="flex flex-col sm:flex-row justify-between items-center gap-14"
         >
+          <button
+            v-if="isEdit"
+            @click="deleteItem"
+            class="flex w-full items-center justify-center font-bold text-sm sm:text-[16px] sm:leading-[22px] text-white bg-[#be3939] border border-[#be3939] hover:text-black hover:bg-white ease-in-out duration-300 px-4 py-3 rounded-full"
+            type="submit"
+          >
+            <span>O'chirish</span>
+          </button>
+
           <button
             class="flex w-full items-center justify-center font-bold text-sm sm:text-[16px] sm:leading-[22px] text-white bg-[#BA8D5B] border border-[#ba8d5b] hover:text-black hover:bg-white ease-in-out duration-300 px-4 py-3 rounded-full"
             type="submit"
@@ -166,6 +175,13 @@ const emits = defineEmits(["close"]);
 
 const closeModal = () => {
   emits("close");
+};
+
+const deleteItem = () => {
+  if (confirm("Chindan o'chirmoqchimisiz?")) {
+    courses_store.DELETE(data.id);
+    closeModal();
+  }
 };
 
 const courses_store = useCourses();

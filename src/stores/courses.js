@@ -30,7 +30,7 @@ export const useCourses = defineStore("courses", () => {
   const DELETE = (id) => {
     course.data.forEach((item, index) => {
       if (item.id == id) {
-        data.value.splice(index, 1);
+        course.data.splice(index, 1);
       }
     });
     updateLocalStorage();
